@@ -21,13 +21,15 @@ class BankAccount {
     }
 
     void withdraw(double amount) {
-        if (amount > 0 && amount <= balance) {
-            balance -= amount;
-            System.out.println("Amount Withdrawn Successfully");
-        } else {
-            System.out.println("Insufficient Balance or Invalid Amount");
-        }
+    if (amount <= 0) {
+        System.out.println("Invalid Amount");
+    } else if (amount > balance) {
+        System.out.println("Insufficient Balance");
+    } else {
+        balance -= amount;
+        System.out.println("Amount Withdrawn Successfully");
     }
+}
 
     void displayBalance() {
         System.out.println("Account Holder: " + accountHolder);
